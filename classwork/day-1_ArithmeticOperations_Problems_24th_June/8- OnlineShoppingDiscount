@@ -1,0 +1,10 @@
+'''to calculate the final payable amount after applying a discount'''
+
+# input of product price from user
+product_price = float(input("Enter the product price: "))
+
+# input of discount amount from user
+discount_amount = float(input("Enter the discount amount: "))
+
+# calculation of final price
+print("Final Price is: ", product_price - discount_amount)
