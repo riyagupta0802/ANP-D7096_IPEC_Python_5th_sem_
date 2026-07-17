@@ -1,0 +1,89 @@
+#Student Result Management
+students = {}
+
+# Taking student details from user
+n = int(input("Enter number of students: "))
+
+for i in range(n):
+    roll = int(input("Enter Roll No: "))
+    marks = int(input("Enter Marks: "))
+    students[roll] = marks
+
+# Find topper
+topper = max(students, key=students.get)
+print("\nTopper:")
+print("Roll No:", topper, "Marks:", students[topper])
+
+# Find average marks
+average = sum(students.values()) / len(students)
+print("\nAverage Marks:", average)
+
+# Display students scoring above average
+print("\nStudents scoring above average:")
+for roll, marks in students.items():
+    if marks > average:
+        print("Roll No:", roll, "Marks:", marks)
+
+# Count failed students
+failed = 0
+for marks in students.values():
+    if marks < 35:
+        failed += 1
+
+print("\nNumber of failed students:", failed)
+
+# Display grades
+print("\nStudent Grades:")
+for roll, marks in students.items():
+    if marks >= 90:
+        grade = "A"
+    elif marks >= 75:
+        grade = "B"
+    elif marks >= 60:
+        grade = "C"
+    elif marks >= 35:
+        grade = "D"
+    else:
+        grade = "Fail"
+
+    print("Roll No:", roll, "Marks:", marks, "Grade:", grade)
+
+'''Output:-
+#Student Result Management
+
+Enter number of students: 5
+
+Enter Roll No: 101
+Enter Marks: 85
+
+Enter Roll No: 102
+Enter Marks: 92
+
+Enter Roll No: 103
+Enter Marks: 67
+
+Enter Roll No: 104
+Enter Marks: 30
+
+Enter Roll No: 105
+Enter Marks: 78
+
+
+Topper:
+Roll No: 102 Marks: 92
+
+Average Marks: 70.4
+
+Students scoring above average:
+Roll No: 101 Marks: 85
+Roll No: 102 Marks: 92
+Roll No: 105 Marks: 78
+
+Number of failed students: 1
+
+Student Grades:
+Roll No: 101 Marks: 85 Grade: B
+Roll No: 102 Marks: 92 Grade: A
+Roll No: 103 Marks: 67 Grade: C
+Roll No: 104 Marks: 30 Grade: Fail
+Roll No: 105 Marks: 78 Grade: B

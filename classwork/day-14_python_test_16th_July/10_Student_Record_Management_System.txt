@@ -1,0 +1,76 @@
+# Student Record Management System
+
+# initialize dictionary
+students = {}
+
+# input details of 5 students
+for i in range(5):
+    name = input("Enter Student Name: ")
+    marks = int(input("Enter Marks: "))
+    students[name] = marks
+
+# display student names and marks
+print("Students Marks:", students)
+
+# add new student
+name = input("Enter New Student Name: ")
+marks = int(input("Enter Marks: "))
+students[name] = marks
+
+print("After Adding Student:", students)
+
+# update marks
+name = input("Enter Student Name to Update: ")
+if name in students:
+    marks = int(input("Enter New Marks: "))
+    students[name] = marks
+    print("Marks Updated")
+else:
+    print("Student not found")
+
+# delete student
+name = input("Enter Student Name to Delete: ")
+if name in students:
+    del students[name]
+    print("Student Deleted")
+else:
+    print("Student not found")
+
+print("Updated Student List:", students)
+
+# display student with highest marks
+highest = max(students, key=students.get)
+
+print("Student Scoring Highest Marks:")
+print(highest, students[highest])
+
+
+'''Output
+Enter Student Name: Rahul
+Enter Marks: 85
+Enter Student Name: Priya
+Enter Marks: 92
+Enter Student Name: Ankit
+Enter Marks: 78
+Enter Student Name: Neha
+Enter Marks: 88
+Enter Student Name: Karan
+Enter Marks: 95
+
+Students Marks: {'Rahul': 85, 'Priya': 92, 'Ankit': 78, 'Neha': 88, 'Karan': 95}
+
+Enter New Student Name: Riya
+Enter Marks: 90
+After Adding Student: {'Rahul': 85, 'Priya': 92, 'Ankit': 78, 'Neha': 88, 'Karan': 95, 'Riya': 90}
+
+Enter Student Name to Update: Rahul
+Enter New Marks: 89
+Marks Updated
+
+Enter Student Name to Delete: Ankit
+Student Deleted
+Updated Student List: {'Rahul': 89, 'Priya': 92, 'Neha': 88, 'Karan': 95, 'Riya': 90}
+
+Student Scoring Highest Marks:
+Karan 95
+'''

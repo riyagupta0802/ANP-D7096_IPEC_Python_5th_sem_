@@ -1,0 +1,39 @@
+# Character Frequency Analyzer
+
+text = input("Enter a string: ")
+
+upper = lower = digit = special = 0
+
+for ch in text:
+    if ch.isupper():
+        upper += 1
+    elif ch.islower():
+        lower += 1
+    elif ch.isdigit():
+        digit += 1
+    else:
+        special += 1
+
+# Find the most frequent character
+max_count = 0
+most = ""
+
+for ch in text:
+    if text.count(ch) > max_count:
+        max_count = text.count(ch)
+        most = ch
+
+print("Uppercase :", upper)
+print("Lowercase :", lower)
+print("Digits :", digit)
+print("Special Characters :", special)
+print("Most Frequent Character :", most)
+
+
+'''Output: 
+Enter a string:Python@2026
+Uppercase : 1 
+Lowercase : 5 Digits : 4 
+Special Characters : 1 
+Most Frequent Character : 2 
+'''
